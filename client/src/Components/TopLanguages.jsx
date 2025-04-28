@@ -19,16 +19,16 @@ const TopLanguages = () => {
     }, []); 
 
     return (
-        <div style={{ textAlign: "center" }}>
-            <h1 style={{color:'purple'}}>Top 10 Languages</h1>
+        <div style={{ textAlign: "center", height: "100%" }}>
+            {/* Removed big h1 to save space */}
             {toplang.length > 0 ? (
-                <ResponsiveContainer width="100%" height={400}>
+                <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={toplang}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="language" />
-                        <YAxis />
+                        <XAxis dataKey="language" fontSize={10} /> {/* smaller font */}
+                        <YAxis fontSize={10} />
                         <Tooltip />
-                        <Legend />
+                        {/* Removed Legend to save vertical space */}
                         <Bar dataKey="country_count" fill="#8884d8" />
                     </BarChart>
                 </ResponsiveContainer>

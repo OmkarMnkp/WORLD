@@ -1,9 +1,13 @@
 import React from "react";
 import TotalPopulation from "../Components/TotalPopulation";
 import TotalCountries from "../Components/TotalCountries";
-import AvgPopulation from "../Components/AvgPopulation";
-import Top10 from "../Components/Top10";
+
 import TopLanguages from "../Components/TopLanguages";
+import TopPopulated from "../Components/TopPopulated";
+import LargestCities from "../Components/LargestCities";
+
+
+
 
 const Dashboard = () => {
     return (
@@ -18,36 +22,44 @@ const Dashboard = () => {
                         <TotalPopulation />
                     </div>
                 </div>
+
                 <div className="col-md-4 mb-3">
                     <div className="p-3 border rounded shadow-sm">
                         <h6>🗺️ Total Countries</h6>
                         <TotalCountries />
                     </div>
                 </div>
+
                 <div className="col-md-4 mb-3">
                     <div className="p-3 border rounded shadow-sm">
-                        <h6>📊 Average Population</h6>
-                        <AvgPopulation />
+                        <h6>🏆 Top Populated Countries (Donut)</h6>
+                        <div style={{ width: "100%", height: "180px" }}>
+                            <TopPopulated />
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
 
-            {/* Graphs Section */}
             <div className="row">
+
+
                 <div className="col-md-6 mb-3">
                     <div className="p-3 border rounded shadow-sm">
-                        <h6>🏆 Top 10 Populated Countries</h6>
-                        <div style={{ width: "100%", height: "280px" }}>
-                            <Top10 />
+                        <h6>🗣️ Most Spoken Languages</h6>
+                        <div style={{ width: "100%", height: "180px" }}>
+                            <TopLanguages />
                         </div>
                     </div>
                 </div>
 
                 <div className="col-md-6 mb-3">
                     <div className="p-3 border rounded shadow-sm">
-                        <h6>🗣️ Most Spoken Languages</h6>
-                        <div style={{ width: "100%", height: "280px" }}>
-                            <TopLanguages />
+                        <h6>🗣️Largest cities</h6>
+                        <div style={{ width: "100%", height: "180px" }}>
+                            <LargestCities/>
                         </div>
                     </div>
                 </div>

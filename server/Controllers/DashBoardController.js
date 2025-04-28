@@ -17,15 +17,19 @@ export const getTotalPopulation = async (req, res) => {
 }
 
 // top 10 populated countries
+
 export const getTop10PopulatedCountries = async (req, res) => {
     try {
-        const q2 = `select name from country order by Population desc limit 10;`;
+        const q2 = `SELECT name, Population as population FROM country ORDER BY Population DESC LIMIT 10;`;
         const Top10Populated = await sequelize.query(q2);
-        res.status(200).send({ top10Populated: Top10Populated[0], success: true })
+        res.status(200).send({ top10Populated: Top10Populated[0], success: true });
     } catch (error) {
-        res.status(500).send({ error: error })
+        res.status(500).send({ error: error });
     }
-}
+};
+
+
+
 // top 10 leat populated countries
 export const getTop10LeastPopulatedCountries = async (req, res) => {
     try {

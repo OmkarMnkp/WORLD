@@ -41,17 +41,18 @@ export const Totalcountries = async () =>{
     return total_countries;
 }
 
-export const AveragePopulation = async () =>{
-    const avg_population = await apiRequest('/dashboard/average-population');
-    return avg_population;
-}
-
-export const TopTenCountries = async ()=>{
-    const top10_countries = await apiRequest('/dashboard/top-10-populated-countries')
-    return top10_countries;
-}
 
 export const Top10Languages = async ()=>{
     const top10_languages = await apiRequest('/dashboard/top-10-languages')
     return top10_languages;
+}
+
+export const Top10PopulatedCountries = async () => {
+    const top10_populated = await apiRequest('/dashboard/top-10-populated-countries');
+    return top10_populated;
+};
+
+export const TopLargestCities = async () =>{
+    const top_largest_cities = await apiRequest('/dashboard/largest-cities');
+    return top_largest_cities;
 }
