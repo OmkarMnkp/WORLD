@@ -4,42 +4,54 @@ import TotalCountries from "../Components/TotalCountries";
 import AvgPopulation from "../Components/AvgPopulation";
 import Top10 from "../Components/Top10";
 import TopLanguages from "../Components/TopLanguages";
-import one from '../assets/one.png';
-import two from '../assets/two.png';
 
 const Dashboard = () => {
     return (
-        <div className="container text-center py-5">
-            <h1 className="mb-5">🌍 Global Dashboard 🌟</h1>
+        <div className="container text-center py-4">
+            <h2 className="mb-4" style={{ fontSize: "28px" }}>🌍 Global Dashboard 🌟</h2>
 
-            <div className="row align-items-center mb-5">
-                {/* Left Image */}
-                <div className="col-lg-3 d-none d-lg-block">
-                    <img src={one} alt="World Map" className="img-fluid" />
+            {/* Statistics Section */}
+            <div className="row mb-4">
+                <div className="col-md-4 mb-3">
+                    <div className="p-3 border rounded shadow-sm">
+                        <h6>👥 Total Population</h6>
+                        <TotalPopulation />
+                    </div>
                 </div>
-
-                {/* Centered Components with emojis */}
-                <div className="col-lg-6 d-flex flex-column align-items-center justify-content-center gap-4">
-                    <h4>👥 Total Population</h4>
-                    <TotalPopulation />
-                    <h4>🗺️ Total Countries</h4>
-                    <TotalCountries />
-                    <h4>📊 Average Population</h4>
-                    <AvgPopulation />
+                <div className="col-md-4 mb-3">
+                    <div className="p-3 border rounded shadow-sm">
+                        <h6>🗺️ Total Countries</h6>
+                        <TotalCountries />
+                    </div>
                 </div>
-
-                {/* Right Image */}
-                <div className="col-lg-3 d-none d-lg-block">
-                    <img src={two} alt="Data Illustration" className="img-fluid" />
+                <div className="col-md-4 mb-3">
+                    <div className="p-3 border rounded shadow-sm">
+                        <h6>📊 Average Population</h6>
+                        <AvgPopulation />
+                    </div>
                 </div>
             </div>
 
-            {/* Bottom Sections with emojis */}
-            <h2 className="my-4">🏆 Top 10 Populated Countries</h2>
-            <Top10 />
+            {/* Graphs Section */}
+            <div className="row">
+                <div className="col-md-6 mb-3">
+                    <div className="p-3 border rounded shadow-sm">
+                        <h6>🏆 Top 10 Populated Countries</h6>
+                        <div style={{ width: "100%", height: "280px" }}>
+                            <Top10 />
+                        </div>
+                    </div>
+                </div>
 
-            <h2 className="my-4">🗣️ Most Spoken Languages</h2>
-            <TopLanguages />
+                <div className="col-md-6 mb-3">
+                    <div className="p-3 border rounded shadow-sm">
+                        <h6>🗣️ Most Spoken Languages</h6>
+                        <div style={{ width: "100%", height: "280px" }}>
+                            <TopLanguages />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

@@ -22,12 +22,9 @@ export const getTop10PopulatedCountries = async (req, res) => {
         const q2 = `select name from country order by Population desc limit 10;`;
         const Top10Populated = await sequelize.query(q2);
         res.status(200).send({ top10Populated: Top10Populated[0], success: true })
-
     } catch (error) {
         res.status(500).send({ error: error })
-
     }
-
 }
 // top 10 leat populated countries
 export const getTop10LeastPopulatedCountries = async (req, res) => {
@@ -52,7 +49,6 @@ export const getTotalCountries = async (req, res) => {
     } catch (error) {
         res.status(500).send({ error: error })
     }
-
 }
 // get avg population
 export const getAveragePopulation = async (req, res) => {
@@ -90,7 +86,8 @@ export const getTotalLanguages =async (req, res) => {
     }
 
 }
-// get top 10 language
+// get top 10 language sql
+
 export const getTop10Languages = async(req, res) => {
     try {
         const q8 = `select language ,count(*) as country_count from countryLanguage group by language order by country_count desc limit 10;`;
